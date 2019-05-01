@@ -37,7 +37,7 @@ class Board extends React.Component {
       for(let j = 0; j < 3; j++) {
         children.push(this.renderSquare((i * 3) + j));
       }
-      table.push(<div className="board-row">{children}</div>);
+      table.push(<div key={ i } className="board-row">{children}</div>);
     }
 
     return table;
@@ -62,7 +62,8 @@ class Game extends React.Component {
         row: 0
       }],
       stepNumber: 0,
-      xIsNext: true
+      xIsNext: true,
+      isReverse: false
     }
   }
 
@@ -95,6 +96,13 @@ class Game extends React.Component {
     });
   }
 
+  reverseMoves() {
+    const newReverse = !this.state.isReverse;
+    this.setState({
+      isReverse: newReverse
+    });
+  }
+
   render() {
     const history = this.state.history;
     const current = history[this.state.stepNumber];
@@ -115,6 +123,10 @@ class Game extends React.Component {
       );
     });
 
+    if (this.state.isReverse) {
+      moves.reverse();
+    }
+
     let status;
     if (winner) {
       status = 'Winner: ' + winner;
@@ -132,6 +144,7 @@ class Game extends React.Component {
         </div>
         <div className="game-info">
           <div>{ status }</div>
+          <button onClick = { () => this.reverseMoves() }>Reverse Move Order</button>
           <ol>{ moves }</ol>
         </div>
       </div>
