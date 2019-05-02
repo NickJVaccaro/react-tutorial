@@ -1,6 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Patrick+Hand+SC');
+
 body {
     font: 14px "Century Gothic", Futura, sans-serif;
-    margin: 20px;
+    max-width: 300px;
+    margin: auto;
+    margin-top: 5%;
 }
 
 ol, ul {
@@ -15,21 +19,24 @@ ol, ul {
 
 .status {
     margin-bottom: 10px;
+    text-align: center;
+    font: 30px 'Patrick Hand SC', cursive;
 }
   
 .square {
+    font-family: 'Patrick Hand SC', cursive;
     background: #fff;
     border: 1px solid #999;
     float: left;
-    font-size: 24px;
+    font-size: 50px;
     font-weight: bold;
-    line-height: 34px;
-    height: 34px;
+    line-height: 100px;
+    height: 100px;
     margin-right: -1px;
     margin-top: -1px;
     padding: 0;
     text-align: center;
-    width: 34px;
+    width: 100px;
 }
 
 .square-win {
@@ -46,9 +53,10 @@ ol, ul {
 
 .game {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .game-info {
-    margin-left: 20px;
+    margin: auto;
+    margin-top: 20px;
 }
