@@ -95,7 +95,7 @@ class Game extends React.Component {
       }]),
       stepNumber: history.length,
       xIsNext: !this.state.xIsNext
-    })
+    });
   }
 
   jumpTo(step) {
@@ -146,9 +146,12 @@ class Game extends React.Component {
       status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
     }
 
+    document.title = "NTT | " + status;
+
     return (
       <div className="game">
         <div className="game-board">
+          <div class="title">Nick Tac Toe</div>
           <div class="status">{ status }</div>
           <Board 
             squares = { current.squares }
