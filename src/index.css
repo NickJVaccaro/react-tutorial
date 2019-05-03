@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Patrick+Hand+SC');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
 body {
-    font: 14px "Century Gothic", Futura, sans-serif;
+    font: 15px 'Roboto', sans-serif;
+    color: #333;
     max-width: 300px;
     margin: auto;
     margin-top: 5%;
@@ -9,6 +11,7 @@ body {
 
 ol, ul {
     padding-left: 30px;
+    list-style-type: none;
 }
 
 .board-row:after {
@@ -27,6 +30,7 @@ ol, ul {
     font-family: 'Patrick Hand SC', cursive;
     background: #fff;
     border: 1px solid #999;
+    color: #333;
     float: left;
     font-size: 50px;
     font-weight: bold;
@@ -59,4 +63,24 @@ ol, ul {
 .game-info {
     margin: auto;
     margin-top: 20px;
+}
+
+.btn {
+    min-height: 30px;
+    min-width: 150px;
+    border-radius: 5px;
+    background-color: lightblue;
+    border: 1px #8ac7db solid;
+    color: #12303b;
+}
+
+.btn:hover {
+    border-color: #3ca1c3;
+}
+
+.jump-to {
+    font-size: 25px;
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 10px;
 }

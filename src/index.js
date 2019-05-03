@@ -119,13 +119,14 @@ class Game extends React.Component {
 
     const moves = history.map((step, move) => {
       const desc = move ?
-        'Go to move #' + move + ' (' + step.col + ',' + Math.floor(step.row) + ')' :
-        'Go to game start';
+        'Move #' + move + ' (' + step.col + ',' + Math.floor(step.row) + ')' :
+        'Game Start';
       return (
         <li key={move}>
           <button 
             onClick = { () => this.jumpTo(move) }
-            style = { this.state.stepNumber === move ? {fontWeight: 'bold'} : {} }>
+            style = { this.state.stepNumber === move ? {fontWeight: 'bold'} : {} }
+            class="btn">
               {desc}
           </button>
         </li>
@@ -156,8 +157,16 @@ class Game extends React.Component {
           />
         </div>
         <div className="game-info">
-          <button onClick = { () => this.reverseMoves() }>Reverse Move Order</button>
-          <ol>{ moves }</ol>
+          <ol>
+            <li class="jump-to">Jump To</li>
+            { moves }
+            <br/>
+            <button 
+              onClick = { () => this.reverseMoves() }
+              class="btn">
+                Reverse Move Order
+            </button>
+          </ol>
         </div>
       </div>
     );
